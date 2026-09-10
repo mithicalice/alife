@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conway's Game of Life</title>
+</head>
+
+<body>
+<canvas id="simulator"></canvas>
+<label for="speedSlider">Speed:</label>
+
+<input
+    type="range"
+    id="speedSlider"
+    min="0"
+    max="100"
+    value="0"
+>
+<span id="speedDisplay">Hz </span>
+<div>
+    <h3>Population statistics</h3>
+    <p>Births: <span id="birthsCount">0</span></p>
+    <p>Deaths: <span id="deathsCount">0</span></p>
+    <p>Population: <span id="populationCount">0</span></p>
+    <p>Birth rate: <span id="birthRate">0</span>%</p>
+    <p>Birth chance: <span id="birthChance">100</span>%</p>
+    <p>Survival chance: <span id="survivalChance">100</span>%</p>
+</div>
+
+
+<button id="stepButton">Step</button>
+<button id="clearButton">Clear</button>
+<div class="rules">
+<style>
+    .rule-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.rule-button {
+    width: 40px;
+    height: 40px;
+}
+.rule-button.selected {
+    background-color: black;
+    color: white;
+}
+</style>
+
+    <div class="rule-group">
+        <h3>Birth</h3>
+
+        <div class="rule-buttons">
+            <button type="button" class="rule-button" data-rule="birth" data-value="0">0</button>
+            <button type="button" class="rule-button" data-rule="birth" data-value="1">1</button>
+            <button type="button" class="rule-button selected" data-rule="birth" data-value="2">2</button>
+            <button type="button" class="rule-button selected" data-rule="birth" data-value="3">3</button>
+            <button type="button" class="rule-button" data-rule="birth" data-value="4">4</button>
+            <button type="button" class="rule-button" data-rule="birth" data-value="5">5</button>
+            <button type="button" class="rule-button" data-rule="birth" data-value="6">6</button>
+            <button type="button" class="rule-button" data-rule="birth" data-value="7">7</button>
+            <button type="button" class="rule-button" data-rule="birth" data-value="8">8</button>
+        </div>
+    </div>
+
+
+    <div class="rule-group">
+        <h3>Survival</h3>
+
+        <div class="rule-buttons">
+            <button type="button" class="rule-button" data-rule="survival" data-value="0">0</button>
+            <button type="button" class="rule-button" data-rule="survival" data-value="1">1</button>
+            <button type="button" class="rule-button selected" data-rule="survival" data-value="2">2</button>
+            <button type="button" class="rule-button selected" data-rule="survival" data-value="3">3</button>
+            <button type="button" class="rule-button selected" data-rule="survival" data-value="4">4</button>
+            <button type="button" class="rule-button" data-rule="survival" data-value="5">5</button>
+            <button type="button" class="rule-button" data-rule="survival" data-value="6">6</button>
+            <button type="button" class="rule-button" data-rule="survival" data-value="7">7</button>
+            <button type="button" class="rule-button" data-rule="survival" data-value="8">8</button>
+        </div>
+    </div>
+<div class="presets">
+    <h3>Presets</h3>
+    <button id="cowPreset">Cow</button>
+    <button id="snowmanPreset">Snowman</button>
+    <button id="wheelPreset">Wheel</button>
+    <button id="lancePreset">Lance</button>
+</div>
+
+</div>
+    <script src="dynamiclife.js">
+        
+    </script>
+
+
+</div>
+</body>
+</html>
